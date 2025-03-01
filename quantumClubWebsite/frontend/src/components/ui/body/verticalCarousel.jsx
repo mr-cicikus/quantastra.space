@@ -1,23 +1,41 @@
-import React from 'react'
-import { Card, CardContent } from '@/components/ui/card'
+import React, { useContext } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Users, Code } from 'lucide-react'
-import avatarImg from '../../../assets/images/pp.png'
+} from '@/components/ui/carousel';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Users, Code } from 'lucide-react';
+import avatarImg from '../../../assets/images/pp.png';
+import { useLanguage } from '../../../context/LanguageContext';  // Import your language context
 
 const verticalCarousel = () => {
+  // Use the language context to access the current language
+  const { language } = useLanguage();
+
+  // Define translations for the text in the component
+  const translations = {
+    en: {
+      coreTeam: 'Core Team Members',
+      role: 'Programmer',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    },
+    tr: {
+      coreTeam: 'Çekirdek Ekip Üyeleri',
+      role: 'Yazılımcı',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    },
+  };
+
   return (
     <div className="rounded-lg border py-2 shadow">
       <div className="flex flex-row items-baseline gap-2 py-2 pl-4 lg:gap-3">
         <Users className="lg:size-7" />
         <h1 className="text-3xl font-semibold lg:text-4xl">
-          Core Team Members
+          {translations[language].coreTeam} {/* Use translation for Core Team Members */}
         </h1>
       </div>
 
@@ -46,13 +64,12 @@ const verticalCarousel = () => {
                             <div className="flex flex-row items-center gap-1">
                               <Code className="dark:text-[[#ffffff88] h-5 w-5 text-neutral-500" />
                               <p className="text-sm text-neutral-500 dark:text-[#ffffff88]">
-                                Programmer
+                                {translations[language].role} {/* Use translation for role */}
                               </p>
                             </div>
                           </div>
                           <p className="text-sm text-neutral-700 dark:text-[#fafafa]">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit.
+                            {translations[language].description} {/* Use translation for description */}
                           </p>
                         </div>
                       </span>
@@ -65,7 +82,7 @@ const verticalCarousel = () => {
         </Carousel>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default verticalCarousel
+export default verticalCarousel;

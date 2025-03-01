@@ -1,7 +1,18 @@
 import React from 'react'
 import { AtomIcon } from 'lucide-react'
+import { useLanguage } from '../../../context/LanguageContext';
+
+const translations = {
+  en: {
+    h1: 'Our Team',
+  },
+  tr: {
+    h1: 'Ekibimiz',
+  },
+};
 
 const TeamHeader = () => {
+  const { language } = useLanguage();
   return (
     <div className="mt-6 flex h-auto w-full flex-col items-center gap-2 md:flex-row md:items-end md:justify-center">
       <div className="flex flex-row items-center justify-center gap-1 pb-2">
@@ -10,7 +21,7 @@ const TeamHeader = () => {
       </div>
 
       <h1 className="flex bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 bg-clip-text pb-2 text-5xl font-bold leading-none text-transparent">
-        Team
+        {translations[language].h1}
       </h1>
     </div>
   )

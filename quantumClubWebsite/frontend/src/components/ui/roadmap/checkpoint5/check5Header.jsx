@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const check5Header = () => {
   return (
     <>
-      <Link to={'/full-stack-apps/roadmap'}>
+      <Link to={'/roadmap'}>
         <Button className="mt-2 w-fit rounded-3xl border px-2 py-2">
           <div className="flex flex-row items-center gap-1">
             <ChevronLeft />

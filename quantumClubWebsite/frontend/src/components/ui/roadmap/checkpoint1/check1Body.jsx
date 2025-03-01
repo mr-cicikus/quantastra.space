@@ -22,12 +22,23 @@ import {
 import moviesContent from './moviesContent.json'
 import seriesContent from './seriesContent.json'
 import booksContent from './booksContent.json'
+import { useLanguage } from '../../../../context/LanguageContext';
 
 const movieContent = moviesContent
 const serieContent = seriesContent
 const bookContent = booksContent
 
+const translations = {
+  en: {
+    h1: 'TV series suggestions',
+  },
+  tr: {
+    h1: 'Dizi önerileri',
+  },
+};
+
 const check1Body = () => {
+  const { language } = useLanguage();
   return (
     <>
       <motion.div
@@ -44,7 +55,7 @@ const check1Body = () => {
                 <AccordionTrigger className="py-3">
                   <h1 className="flex flex-row items-center gap-2 text-left text-xl font-semibold">
                     <MonitorPlay />
-                    Dizi önerileri
+                    {translations[language].h1}
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
