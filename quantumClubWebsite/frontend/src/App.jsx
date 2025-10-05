@@ -15,6 +15,8 @@ import TeamPage from './pages/TeamPage';
 import AboutPage from './pages/AboutPage';
 import MagPage from './pages/MagPage';
 import { LanguageProvider } from './context/LanguageContext';  // Import LanguageProvider
+import { useState, useEffect } from "react";
+
 
 function App() {
   return (

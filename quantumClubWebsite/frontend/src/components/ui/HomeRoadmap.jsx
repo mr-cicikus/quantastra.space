@@ -11,7 +11,7 @@ const translations = {
     take: 'Take me there!',
   },
   tr: {
-    want: 'Kuantum hakkında bilgi edinmek istermisiniz?',
+    want: 'Kuantum hakkında bilgi edinmek ister misiniz?',
     start: 'O halde yolculuğunuza eşlik etmek için harika bir şey var:',
     roadmap: 'Kuantum Yol Haritası!',
     take: 'Beni oraya götür!'

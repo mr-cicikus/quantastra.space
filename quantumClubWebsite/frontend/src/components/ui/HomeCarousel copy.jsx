@@ -10,6 +10,7 @@ import { motion } from 'framer-motion'
 
 const HomeCarousel = () => {
   return (
+    <body>
       <Container>
         <div className="w-full">
           <Swiper
@@ -87,6 +88,7 @@ const HomeCarousel = () => {
           </Swiper>
         </div>
       </Container>
+    </body>
   )
 }
 
